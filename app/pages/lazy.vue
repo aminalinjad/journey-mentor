@@ -55,7 +55,8 @@
 import { ref, computed, watch, onMounted, onBeforeUnmount } from 'vue'
 import { useRoute, useRouter } from '#app'
 import { useAsyncData, useHead } from 'nuxt/app'
-import { debounce } from 'lodash'
+import pkg from 'lodash'
+const { debounce } = pkg
 import { listCountries } from '@/services/countries.services'
 import type { Country } from '../types/countries.type'
 
