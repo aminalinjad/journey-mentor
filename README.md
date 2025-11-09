@@ -1,75 +1,37 @@
-# Nuxt Minimal Starter
+# Journey Mentor
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+**Live Demo:** [https://journey-mentor-ipwz.vercel.app/](https://journey-mentor-ipwz.vercel.app/)
 
-## Setup
+Journey Mentor is a Nuxt 3 web application that allows users to explore countries around the world, including details such as population, region, capital, flags, and more. The app features search, filtering, and population range selection for enhanced usability.
 
-Make sure to install dependencies:
+## Features
 
-```bash
-# npm
-npm install
+- **Search Countries:** Search by country name in real-time.
+- **Filter by Region:** Filter countries by region using a dropdown.
+- **Population Slider:** Select a population range to dynamically filter countries.
+- **Pagination & Infinite Scroll:**
+    - Standard pages show 12 countries per page with “Load More” functionality.
+    - `/lazy` page implements a virtualized scroll where data is **appended when scrolling down** and **removed from the DOM when scrolling up** for better performance on large datasets.
+- **SEO Optimized:** Each page has dynamic titles and meta descriptions based on search and filters.
+- **Dark Mode Support:** Toggle between light and dark themes.
 
-# pnpm
-pnpm install
+## `/lazy` Page Details
 
-# yarn
-yarn install
+The `/lazy` page demonstrates an efficient virtualized list:
 
-# bun
-bun install
-```
+- Only a subset of countries (12 at a time) is rendered in the DOM.
+- When the user scrolls to the bottom, the next batch of countries is loaded and appended.
+- When scrolling up, previously rendered countries are removed from the DOM to improve performance.
+- Router query updates accordingly (`?page=2`, etc.) to maintain state across refreshes.
 
-## Development Server
+## Technologies
 
-Start the development server on `http://localhost:3000`:
+- **Nuxt 3**
+- **Vue 3**
+- **Tailwind CSS (v4)**
+- **Vite**
+- **Lodash** (debounce)
 
-```bash
-# npm
-npm run dev
+## Live Preview
 
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Visit the live site: [https://journey-mentor-ipwz.vercel.app/](https://journey-mentor-ipwz.vercel.app/)
